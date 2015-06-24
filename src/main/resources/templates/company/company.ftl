@@ -4,11 +4,11 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/static/css/main.css"/>
-		<title>Address</title>
+		<title>Company</title>
 	</head>
 	<body>
 		<div class="container">
-			<h1>Address CRUD</h1>
+			<h1>Company CRUD</h1>
 		</div>
 	</body>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

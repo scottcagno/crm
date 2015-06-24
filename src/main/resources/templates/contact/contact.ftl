@@ -4,10 +4,12 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/static/css/main.css"/>
-		<title></title>
+		<title>Contact</title>
 	</head>
 	<body>
-		<h1>Hello, World!</h1>
+		<div class="container">
+			<h1>Contact CRUD</h1>
+		</div>
 	</body>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="/static/js/main.js"></script>
