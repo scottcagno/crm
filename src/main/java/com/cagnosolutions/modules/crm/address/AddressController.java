@@ -1,4 +1,4 @@
-package com.cagnosolutions.moduiles.crm.task;
+package com.cagnosolutions.modules.crm.address;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,14 +11,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 
 @Controller
-@RequestMapping("/task")
-public class TaskController {
-	
+@RequestMapping("/address")
+public class AddressController {
+
 	@Autowired
-	private TaskService taskService;
+	private AddressService addressService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String get() {
-		return "task/task";
+		return "address/address";
 	}
+
 }

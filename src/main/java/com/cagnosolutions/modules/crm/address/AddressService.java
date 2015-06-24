@@ -1,4 +1,4 @@
-package com.cagnosolutions.moduiles.crm.contact;
+package com.cagnosolutions.modules.crm.address;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,28 +15,28 @@ import static org.springframework.data.domain.Sort.Direction;
  */
 
 @Service
-public class ContactService {
+public class AddressService {
 
 	@Autowired
-	private ContactRepository repo;
+	private AddressRepository repo;
 
-	public List<Contact> findAll() {
+	public List<Address> findAll() {
 		return repo.findAll();
 	}
 
-	public Contact findOne(int id) {
+	public Address findOne(int id) {
 		return repo.findOne(id);
 	}
 
-	public Contact save(Contact contact) {
-		return repo.save(contact);
+	public Address save(Address address) {
+		return repo.save(address);
 	}
 
 	public void delete(int id) {
 		repo.delete(id);
 	}
 
-	public Page<Contact> findAll(int page, int size, String dir, String fields) {
+	public Page<Address> findAll(int page, int size, String dir, String fields) {
 		Direction direction = ("desc".equals(dir) ? Direction.DESC : Direction.ASC);
 		return repo.findAll(new PageRequest(page, size, direction, fields));
 	}

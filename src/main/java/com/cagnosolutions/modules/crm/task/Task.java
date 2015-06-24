@@ -1,6 +1,6 @@
-package com.cagnosolutions.moduiles.crm.task;
+package com.cagnosolutions.modules.crm.task;
 
-import com.cagnosolutions.moduiles.crm.contact.Contact;
+import com.cagnosolutions.modules.crm.contact.Contact;
 
 import javax.persistence.*;
 import java.sql.Date;

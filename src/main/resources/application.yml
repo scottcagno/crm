@@ -1,7 +1,7 @@
 spring:
 
-#  freemarker:
-#    exposeSessionAttributes: true
+  freemarker:
+    exposeSessionAttributes: true
 
   datasource:
     driverClassName: com.mysql.jdbc.Driver
@@ -28,9 +28,9 @@ server:
   address: 0.0.0.0
   session-timeout: 1200
 
-#security:
-#  user:
-#    role: ADMIN
-#    name: admin
-#    password: admin
-#  enableCsrf: true
+security:
+  user:
+    role: ADMIN
+    name: admin
+    password: admin
+  enableCsrf: true

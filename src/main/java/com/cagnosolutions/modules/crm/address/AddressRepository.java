@@ -1,4 +1,4 @@
-package com.cagnosolutions.moduiles.crm.task;
+package com.cagnosolutions.modules.crm.address;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface TaskRepository extends JpaRepository<Task, Integer>{
+public interface AddressRepository extends JpaRepository<Address, Integer> {
 }

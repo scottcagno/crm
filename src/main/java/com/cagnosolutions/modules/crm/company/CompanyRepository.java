@@ -1,4 +1,4 @@
-package com.cagnosolutions.moduiles.crm.contact;
+package com.cagnosolutions.modules.crm.company;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface ContactRepository extends JpaRepository<Contact, Integer> {
+public interface CompanyRepository extends JpaRepository<Company, Integer> {
 }

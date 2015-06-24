@@ -1,4 +1,4 @@
-package com.cagnosolutions.moduiles.crm.contact;
+package com.cagnosolutions.modules.crm.contact;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

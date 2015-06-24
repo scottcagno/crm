@@ -1,7 +1,6 @@
-package com.cagnosolutions.moduiles.crm.company;
+package com.cagnosolutions.modules.crm.company;
 
-import com.cagnosolutions.moduiles.crm.address.Address;
-import com.sun.org.apache.xpath.internal.operations.String;
+import com.cagnosolutions.modules.crm.address.Address;
 
 import javax.persistence.*;
 

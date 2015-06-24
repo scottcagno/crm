@@ -1,4 +1,4 @@
-package com.cagnosolutions.moduiles.crm;
+package com.cagnosolutions.modules.crm;
 
 /**
  * Created by Scott Cagno.

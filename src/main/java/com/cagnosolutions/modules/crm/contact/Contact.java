@@ -1,7 +1,7 @@
-package com.cagnosolutions.moduiles.crm.contact;
+package com.cagnosolutions.modules.crm.contact;
 
-import com.cagnosolutions.moduiles.crm.address.Address;
-import com.cagnosolutions.moduiles.crm.company.Company;
+import com.cagnosolutions.modules.crm.address.Address;
+import com.cagnosolutions.modules.crm.company.Company;
 
 import javax.persistence.*;
 

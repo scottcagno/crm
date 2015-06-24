@@ -1,4 +1,4 @@
-package com.cagnosolutions.moduiles.crm.task;
+package com.cagnosolutions.modules.crm.contact;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,28 +15,28 @@ import static org.springframework.data.domain.Sort.Direction;
  */
 
 @Service
-public class TaskService {
+public class ContactService {
 
 	@Autowired
-	private TaskRepository repo;
+	private ContactRepository repo;
 
-	public List<Task> findAll() {
+	public List<Contact> findAll() {
 		return repo.findAll();
 	}
 
-	public Task findOne(int id) {
+	public Contact findOne(int id) {
 		return repo.findOne(id);
 	}
 
-	public Task save(Task task) {
-		return repo.save(task);
+	public Contact save(Contact contact) {
+		return repo.save(contact);
 	}
 
 	public void delete(int id) {
 		repo.delete(id);
 	}
 
-	public Page<Task> findAll(int page, int size, String dir, String fields) {
+	public Page<Contact> findAll(int page, int size, String dir, String fields) {
 		Direction direction = ("desc".equals(dir) ? Direction.DESC : Direction.ASC);
 		return repo.findAll(new PageRequest(page, size, direction, fields));
 	}

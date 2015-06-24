@@ -1,4 +1,4 @@
-package com.cagnosolutions.moduiles.crm.address;
+package com.cagnosolutions.modules.crm.address;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
