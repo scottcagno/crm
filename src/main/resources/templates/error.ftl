@@ -15,6 +15,7 @@
 			<p><a href="/task">/task</a> -- Task CRUD</p>
 		</div>
 	</body>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="/static/js/main.js"></script>
 </html>
