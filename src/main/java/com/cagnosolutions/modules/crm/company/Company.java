@@ -1,8 +1,10 @@
 package com.cagnosolutions.modules.crm.company;
 
 import com.cagnosolutions.modules.crm.address.Address;
+import com.cagnosolutions.modules.crm.contact.Contact;
 
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  * Created by Scott Cagno.
@@ -22,6 +24,9 @@ public class Company {
 	@JoinColumn(name = "address_fk", nullable = false)
 	private Address address;
 
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "company")
+	private Set<Contact> contacts;
+
 	private String phone;
 	private String fax;
 	private String website;
@@ -29,7 +34,7 @@ public class Company {
 
 	public Company() {}
 
-	public Company(int id, String name, Address address, String phone, String fax, String website, String description) {
+	public Company(int id, String name, Address address, String phone, String fax, String website, String description, Set<Contact> contacts) {
 		this.id = id;
 		this.name = name;
 		this.address = address;
@@ -37,6 +42,7 @@ public class Company {
 		this.fax = fax;
 		this.website = website;
 		this.description = description;
+		this.contacts =  contacts;
 	}
 
 	public int getId() {
@@ -93,6 +99,14 @@ public class Company {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public Set<Contact> getContacts() {
+		return contacts;
+	}
+
+	public void setContacts(Set<Contact> contacts) {
+		this.contacts = contacts;
 	}
 
 	public java.lang.String toString() {

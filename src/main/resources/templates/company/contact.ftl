@@ -24,63 +24,24 @@
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
 							Contact
-							<a href="/contact" class="pull-right btn btn-xs btn-default">Clear</a>
 						</div>
 						<div class="panel-body">
-							<form action="/contact" method="post">
-								<div class="form-group">
-									<input type="text" class="form-control" name="firstName" placeholder="First Name" value="${(contact.firstName)!}"/>
-								</div>
-								<div class="form-group">
-									<input type="text" class="form-control" name="lastName" placeholder="Last Name" value="${(contact.lastName)!}"/>
-								</div>
-								<div class="form-group">
-									<label>Select Address</label>
-									<select class="form-control" name="addressId">
-										<option value="0"></option>
-										<#list addresses as address>
-											<option value="${(address.id)!}" ${(contact?? && contact.address.id == address.id)?string('selected', '')}>${address.street}</option>
-										</#list>
-									</select>
-									<a href="#" data-toggle="modal" data-target="#addressModal">New Address</a>
-								</div>
-								<div class="form-group">
-									<input type="text" class="form-control" name="phone" placeholder="Phone" value="${(contact.phone)!}"/>
-								</div>
-								<div class="form-group">
-									<input type="text" class="form-control" name="email" placeholder="Email" value="${(contact.email)!}"/>
-								</div>
-								<div class="form-group">
-									<label>Select Company</label>
-									<select class="form-control" name="companyId">
-										<option value="0"></option>
-										<#list companies as company>
-											<option value="${(company.id)!}" ${(contact?? && contact.company.id == company.id)?string('selected', '')}>${company.name}</option>
-										</#list>
-									</select>
-									<a href="#" data-toggle="modal" data-target="#companyModal">New Company</a>
-								</div>
-								<div class="form-group">
-									<input type="text" class="form-control" name="description" placeholder="Description" value="${(contact.description)!}"/>
-								</div>
-								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-								<div class="form-group">
-									<button class="btn btn-block btn-primary">Save</button>
-								</div>
-								<#if contact??>
-									<input type="hidden" name="id" value="${(contact.id)!}"/>
-									<div class="form-group">
-										<a href="#" id="deleteButton" data-delete="/contact/${(contact.id)!}" class="btn btn-danger btn-block">Delete</a>
-									</div>
-								</#if>
-							</form>
+							<p><label>Name:</label> ${(company.name)!}</p>
+							<p><label>Street:</label> ${(company.address.state)!}</p>
+							<p><label>City:</label> ${(company.address.city)!}</p>
+							<p><label>State:</label> ${(company.address.state)!}</p>
+							<p><label>Zip:</label> ${(company.address.zip)!}</p>
+							<p><label>Phone:</label> ${(company.phone)!}</p>
+							<p><label>Fax:</label> ${(company.fax)!}</p>
+							<p><label>Website:</label> ${(company.website)!}</p>
+							<p><label>Description:</label> ${(company.description)!}</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-9">
 					<div class="panel panel-default">
 						<div class="panel-heading">Contacts</div>
-						<#if contacts?has_content>
+						<#if company.contacts?has_content>
 							<table class="table table-striped table-bordered">
 								<thead>
 									<tr>
@@ -95,15 +56,15 @@
 									</tr>
 								</thead>
 								<tbody>
-									<#list contacts as contact>
+									<#list company.contacts as contact>
 										<tr>
 											<td class="text-center"><a href="/contact/${(contact.id)!}" class="btn btn-xs btn-primary">${(contact.id)!}</a></td>
 											<td>${(contact.firstName)!}</td>
-											<td>${(contact.lastName)}</td>
+											<td>${(contact.lastName)!}</td>
 											<td><a href="/address/${(contact.addresss.id)!}">${(contact.address.street)!}</a></td>
 											<td>${(contact.phone)!}</td>
 											<td>${(contact.email)!}</td>
-											<td><a href="/company/${(contact.company.id)!}">${(contact.company.name)!}</a></td>
+											<td><a href="/company/${(company.contact.company.id)!}">${(contact.company.name)!}</a></td>
 											<td>${(contact.description)!}</td>
 										</tr>
 									</#list>

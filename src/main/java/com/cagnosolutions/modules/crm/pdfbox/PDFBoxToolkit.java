@@ -19,7 +19,7 @@ public class PDFBoxToolkit {
 
 	private static PDDocument _pdfDocument;
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 
 		String originalPdf = "/tmp/input.PDF";
 		String targetPdf = "/tmp/input.PDF";
@@ -31,7 +31,7 @@ public class PDFBoxToolkit {
 		}
 
 		System.out.println("Complete");
-	}
+	}*/
 
 	private static void populateAndCopy(String originalPdf, String targetPdf) throws IOException, COSVisitorException {
 		_pdfDocument = PDDocument.load(originalPdf);
