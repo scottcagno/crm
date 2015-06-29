@@ -31,12 +31,12 @@ public class Task {
 	private short sendEmail;
 	private short sendText;
 	private short repeate;
-	private int repeateInterval;
+	private int repeatInterval;
 
 	public Task() {}
 
 	public Task(int id, String name, Date date, Contact contact, int priority, int status, String description,
-						short sendEmail, short sendText, short repeate, int repeateInterval) {
+						short sendEmail, short sendText, short repeate, int repeatInterval) {
 		this.id = id;
 		this.name = name;
 		this.date = date;
@@ -47,7 +47,7 @@ public class Task {
 		this.sendEmail = sendEmail;
 		this.sendText = sendText;
 		this.repeate = repeate;
-		this.repeateInterval = repeateInterval;
+		this.repeatInterval = repeatInterval;
 	}
 
 	public int getId() {
@@ -130,12 +130,12 @@ public class Task {
 		this.repeate = repeate;
 	}
 
-	public int getRepeateInterval() {
-		return repeateInterval;
+	public int getRepeatInterval() {
+		return repeatInterval;
 	}
 
-	public void setRepeateInterval(int repeateInterval) {
-		this.repeateInterval = repeateInterval;
+	public void setRepeatInterval(int repeatInterval) {
+		this.repeatInterval = repeatInterval;
 	}
 
 	public String toString() {
@@ -149,8 +149,8 @@ public class Task {
 				", description='" + description + '\'' +
 				", sendEmail=" + sendEmail +
 				", sendText=" + sendText +
-				", repeate=" + repeate +
-				", repeateInterval=" + repeateInterval +
+				", repeat=" + repeate +
+				", repeatInterval=" + repeatInterval +
 				'}';
 	}
 }

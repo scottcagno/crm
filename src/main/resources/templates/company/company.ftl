@@ -17,7 +17,8 @@
 					<a id="deleteCancel" class="btn btn-default btn-sm">No</a>
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 				</form>
-				Are you sure you would like to permanently delete this company?
+				Deleting this company will permanently delete all of it's contacts.
+				Are you sure you would like to permanently delete this company and all of the related contacts?
 			</div>
 			<div class="row">
 				<div class="col-lg-3">
@@ -59,7 +60,7 @@
 								<#if company??>
 									<input type="hidden" name="id" value="${(company.id)!}"/>
 									<div class="form-group">
-										<a href="/company/${(company.id)!}/contact" class="btn btn-success btn-block">View Contacts</a>
+										<a href="/company/${(company.id)!}/contact" class="btn btn-success btn-block">View <Contacts></Contacts></a>
 									</div>
 									<div class="form-group">
 										<a href="#" id="deleteButton" data-delete="/company/${(company.id)!}" class="btn btn-danger btn-block">Delete</a>

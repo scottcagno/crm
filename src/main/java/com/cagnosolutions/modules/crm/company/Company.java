@@ -24,7 +24,7 @@ public class Company {
 	@JoinColumn(name = "address_fk", nullable = false)
 	private Address address;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "company")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "company", cascade = CascadeType.REMOVE)
 	private Set<Contact> contacts;
 
 	private String phone;
