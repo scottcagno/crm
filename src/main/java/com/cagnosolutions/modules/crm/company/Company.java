@@ -110,14 +110,14 @@ public class Company {
 	}
 
 	public java.lang.String toString() {
-		return "Company{" +
-				"id=" + id +
-				", name=" + name +
-				", address=" + address +
-				", phone=" + phone +
-				", fax=" + fax +
-				", website=" + website +
-				", description=" + description +
+		return "{" +
+				"id:" + id +
+				", name: '" + name + '\'' +
+				", address:" + address +
+				", phone: '" + phone + '\'' +
+				", fax: '" + fax + '\'' +
+				", website: '" + website + '\'' +
+				", description: '" + description + '\'' +
 				'}';
 	}
 }

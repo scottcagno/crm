@@ -5,3 +5,7 @@
 textarea {
 	resize: none;
 }
+
+.eventRed {
+	background-color: red;
+}

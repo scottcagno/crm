@@ -26,7 +26,6 @@ public class TaskController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String get(Model model) {
-
 		model.addAttribute("tasks", taskService.findAll());
 		model.addAttribute("contacts", contactService.findAll());
 		return "task/task";
@@ -41,7 +40,7 @@ public class TaskController {
 		task.setContact(contactService.findOne(contactId));
 		taskService.save(task);
 		attr.addFlashAttribute("alertSuccess", "Successfully saved task");
-		return "redirect:/task";
+		return "redirect:/task/show/cal";
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -60,7 +59,9 @@ public class TaskController {
 	}
 
 	@RequestMapping(value = "/show/cal", method = RequestMethod.GET)
-	public String cal() {
+	public String cal(Model model) {
+		model.addAttribute("tasks", taskService.findAll());
+		model.addAttribute("contacts", contactService.findAll());
 		return "task/calendar";
 	}
 }

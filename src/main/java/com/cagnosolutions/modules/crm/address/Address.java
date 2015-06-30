@@ -82,13 +82,13 @@ public class Address {
 	}
 
 	public String toString() {
-		return "Address{" +
-				"id=" + id +
-				", street='" + street + '\'' +
-				", city='" + city + '\'' +
-				", state='" + state + '\'' +
-				", zip='" + zip + '\'' +
-				", type=" + type +
+		return "{" +
+				"id:" + id +
+				", street: '" + street + '\'' +
+				", city: '" + city + '\'' +
+				", state: '" + state + '\'' +
+				", zip: '" + zip + '\'' +
+				", type: " + type +
 				'}';
 	}
 }

@@ -18,7 +18,8 @@ public class Task {
 	private int id;
 
 	private String name;
-	private Date date;
+	private Date startDate;
+	private Date endDate;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "contact_fk", nullable = false)
@@ -33,13 +34,15 @@ public class Task {
 	private short repeate;
 	private int repeatInterval;
 
+	private String color;
+
 	public Task() {}
 
-	public Task(int id, String name, Date date, Contact contact, int priority, int status, String description,
+	public Task(int id, String name, Date startDate, Contact contact, int priority, int status, String description,
 						short sendEmail, short sendText, short repeate, int repeatInterval) {
 		this.id = id;
 		this.name = name;
-		this.date = date;
+		this.startDate = startDate;
 		this.contact = contact;
 		this.priority = priority;
 		this.status = status;
@@ -66,12 +69,12 @@ public class Task {
 		this.name = name;
 	}
 
-	public Date getDate() {
-		return date;
+	public Date getStartDate() {
+		return startDate;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
 	}
 
 	public Contact getContact() {
@@ -138,19 +141,28 @@ public class Task {
 		this.repeatInterval = repeatInterval;
 	}
 
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
 	public String toString() {
-		return "Task{" +
-				"id=" + id +
-				", name='" + name + '\'' +
-				", date=" + date +
-				", contact=" + contact +
-				", priority=" + priority +
-				", status=" + status +
-				", description='" + description + '\'' +
-				", sendEmail=" + sendEmail +
-				", sendText=" + sendText +
-				", repeat=" + repeate +
-				", repeatInterval=" + repeatInterval +
+		return "{" +
+				"id:" + id +
+				", title: '" + name + '\'' +
+				", start: " + "new Date('" + startDate + " EDT')" +
+				", contact: " + contact +
+				", priority: " + priority +
+				", status: " + status +
+				", description: '" + description + '\'' +
+				", sendEmail: " + sendEmail +
+				", sendText: " + sendText +
+				", repeat: " + repeate +
+				", repeatInterval: " + repeatInterval +
+				", color: '" + color + '\'' +
 				'}';
 	}
 }

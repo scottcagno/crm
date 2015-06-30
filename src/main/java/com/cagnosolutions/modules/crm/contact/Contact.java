@@ -111,15 +111,15 @@ public class Contact {
 	}
 
 	public String toString() {
-		return "Contact{" +
-				"id=" + id +
-				", company=" + company +
-				", firstName='" + firstName + '\'' +
-				", lastName='" + lastName + '\'' +
-				", email='" + email + '\'' +
-				", phone='" + phone + '\'' +
-				", address=" + address +
-				", description='" + description + '\'' +
+		return "{" +
+				"id:" + id +
+				", company:" + company +
+				", firstName:'" + firstName + '\'' +
+				", lastName:'" + lastName + '\'' +
+				", email:'" + email + '\'' +
+				", phone:'" + phone + '\'' +
+				", address:" + address +
+				", description:'" + description + '\'' +
 				'}';
 	}
 }
