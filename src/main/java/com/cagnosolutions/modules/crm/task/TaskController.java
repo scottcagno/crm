@@ -48,14 +48,14 @@ public class TaskController {
 		model.addAttribute("tasks", taskService.findAll());
 		model.addAttribute("task", taskService.findOne(id));
 		model.addAttribute("contacts", contactService.findAll());
-		return "tasks/tasks";
+		return "task/task";
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
 	public String delete(@PathVariable int id, RedirectAttributes attr) {
 		taskService.delete(id);
-		attr.addFlashAttribute("Successfully deleted task");
-		return "redirect:/task";
+		attr.addFlashAttribute("alertSuccess", "Successfully deleted task");
+		return "redirect:/task/show/cal";
 	}
 
 	@RequestMapping(value = "/show/cal", method = RequestMethod.GET)

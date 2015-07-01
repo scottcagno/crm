@@ -20,37 +20,41 @@ public class Task {
 	private String name;
 	private Date startDate;
 	private Date endDate;
+	private String startTime = "";
+	private String endTime = "";
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "contact_fk", nullable = false)
 	private Contact contact;
 
-	private int priority;
-	private int status;
+	private int priority; // 0 = low, 1 = medium, 2 = high
+	private int status; // 0 = open, 1 = closed
 	private String description;
 
-	private short sendEmail;
-	private short sendText;
-	private short repeate;
-	private int repeatInterval;
+	private short allDay;
+	private int reminder;  // 0 = none, 1 = email, 2 = text, 3 = both
+	private int repeatInterval; // 0 = none, 1 = weekly, 2 = monthly, 3 = yearly
 
 	private String color;
 
 	public Task() {}
 
-	public Task(int id, String name, Date startDate, Contact contact, int priority, int status, String description,
-						short sendEmail, short sendText, short repeate, int repeatInterval) {
+	public Task(int id, String name, Date startDate, Date endDate, String startTime, String endTime, Contact contact,
+				int priority, int status, String description, short allDay, int reminder, int repeatInterval, String color) {
 		this.id = id;
 		this.name = name;
 		this.startDate = startDate;
+		this.endDate = endDate;
+		this.startTime = startTime;
+		this.endTime = endTime;
 		this.contact = contact;
 		this.priority = priority;
 		this.status = status;
 		this.description = description;
-		this.sendEmail = sendEmail;
-		this.sendText = sendText;
-		this.repeate = repeate;
+		this.allDay = allDay;
+		this.reminder = reminder;
 		this.repeatInterval = repeatInterval;
+		this.color = color;
 	}
 
 	public int getId() {
@@ -75,6 +79,14 @@ public class Task {
 
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
 	}
 
 	public Contact getContact() {
@@ -109,28 +121,12 @@ public class Task {
 		this.description = description;
 	}
 
-	public short getSendEmail() {
-		return sendEmail;
+	public short getAllDay() {
+		return allDay;
 	}
 
-	public void setSendEmail(short sendEmail) {
-		this.sendEmail = sendEmail;
-	}
-
-	public short getSendText() {
-		return sendText;
-	}
-
-	public void setSendText(short sendText) {
-		this.sendText = sendText;
-	}
-
-	public short getRepeate() {
-		return repeate;
-	}
-
-	public void setRepeate(short repeate) {
-		this.repeate = repeate;
+	public void setAllDay(short allDay) {
+		this.allDay = allDay;
 	}
 
 	public int getRepeatInterval() {
@@ -149,20 +145,44 @@ public class Task {
 		this.color = color;
 	}
 
+	public String getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public String getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public int getReminder() {
+		return reminder;
+	}
+
+	public void setReminder(int reminder) {
+		this.reminder = reminder;
+	}
+
 	public String toString() {
 		return "{" +
 				"id:" + id +
 				", title: '" + name + '\'' +
-				", start: " + "new Date('" + startDate + " EDT')" +
+				", start: ' " + startDate + 'T' + startTime + "Z'" +
+				", end: ' " + endDate + 'T' + endTime + "Z'" +
 				", contact: " + contact +
 				", priority: " + priority +
 				", status: " + status +
-				", description: '" + description + '\'' +
-				", sendEmail: " + sendEmail +
-				", sendText: " + sendText +
-				", repeat: " + repeate +
+				", description: \"" + description + '"' +
 				", repeatInterval: " + repeatInterval +
+				", reminder: " + reminder +
 				", color: '" + color + '\'' +
+				", allDay: " + ((allDay == 1) ? "true" : "false") +
 				'}';
 	}
 }

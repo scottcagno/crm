@@ -8,8 +8,8 @@
 	</head>
 	<body>
 		<#include "../stubs/navbar.ftl"/>
-		<#include "../stubs/alert.ftl"/>
 		<div class="container-fluid">
+			<#include "../stubs/alert.ftl"/>
 			<!-- delete object alert -->
 			<div id="deleteAlert" class="alert alert-danger clearfix hide">
 				<form id="deleteForm" action="" method="post" class="col-lg-2">

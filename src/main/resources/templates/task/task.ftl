@@ -35,9 +35,15 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="control-label col-xs-3">Date</label>
+									<label class="control-label col-xs-3">Start Date</label>
 									<div class="col-xs-9">
-										<input class="form-control" type="date" name="date" placeholder="Date" value=""/>
+										<input id="startDate" class="form-control" type="date" name="startDate" placeholder="Start Date" value=""/>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-xs-3">End Date</label>
+									<div class="col-xs-9">
+										<input id="endDate" class="form-control" type="date" name="endDate" placeholder="End Date" value=""/>
 									</div>
 								</div>
 								<div class="form-group">
@@ -168,6 +174,5 @@
 	<script src="/static/js/main.js"></script>
 	<script src="/static/js/delete.js"></script>
 	<script>
-		var events = [<#list tasks as task>${task}</#list>];
 	</script>
 </html>
