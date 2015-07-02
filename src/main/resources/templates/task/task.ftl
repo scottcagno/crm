@@ -119,6 +119,9 @@
 										</select>
 									</div>
 								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" name="startString"/>
+								</div>
 								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 								<div class="form-group">
 									<button class="btn btn-block btn-primary">Save</button>
@@ -141,14 +144,14 @@
 								<thead>
 									<tr>
 										<th>ID</th>
-										<th>Date</th>
+										<th>Name</th>
 									</tr>
 								</thead>
 								<tbody>
 									<#list tasks as task>
 										<tr>
 											<td class="text-center"><a href="/task/${(task.id)!}" class="btn btn-xs btn-primary">${(task.id)!}</a></td>
-											<td>${(task.date?date)!}</td>
+											<td>${(task.name)!}</td>
 										</tr>
 									</#list>
 								</tbody>

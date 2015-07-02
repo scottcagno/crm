@@ -35,9 +35,12 @@ dependencies {
     runtime("mysql:mysql-connector-java")
 
     // pdf manipulation
-    compile 'org.apache.pdfbox:pdfbox:1.8.9'
-    compile 'org.apache.pdfbox:fontbox:1.8.9'
-    compile 'org.apache.pdfbox:jempbox:1.8.9'
+    compile("org.apache.pdfbox:pdfbox:1.8.9")
+    compile("org.apache.pdfbox:fontbox:1.8.9")
+    compile("org.apache.pdfbox:jempbox:1.8.9")
+
+	// joda time/date
+	compile("joda-time:joda-time:2.8.1")
 
 }
 

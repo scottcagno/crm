@@ -1,6 +1,7 @@
 package com.cagnosolutions.modules.crm.task;
 
 import com.cagnosolutions.modules.crm.contact.ContactService;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,14 +33,18 @@ public class TaskController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String save(Task task, int contactId, RedirectAttributes attr) {
+	public String save(Task task, int contactId, RedirectAttributes attr, String startString, String endString, String view) {
 		if (contactId == 0) {
 			attr.addFlashAttribute("alertError", "Invalid contact");
-			return "redirect:/task";
+			return "redirect:/task/show/cal";
 		}
+		task.setStart(new DateTime(startString));
+		task.setEnd(new DateTime(endString));
 		task.setContact(contactService.findOne(contactId));
 		taskService.save(task);
 		attr.addFlashAttribute("alertSuccess", "Successfully saved task");
+		attr.addFlashAttribute("view", view);
+		attr.addFlashAttribute("day", startString);
 		return "redirect:/task/show/cal";
 	}
 
@@ -52,9 +57,12 @@ public class TaskController {
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
-	public String delete(@PathVariable int id, RedirectAttributes attr) {
+	public String delete(@PathVariable int id, RedirectAttributes attr, String view) {
+		Task task = taskService.findOne(id);
 		taskService.delete(id);
 		attr.addFlashAttribute("alertSuccess", "Successfully deleted task");
+		attr.addFlashAttribute("view", view);
+		attr.addFlashAttribute("day", task.getStart().toString());
 		return "redirect:/task/show/cal";
 	}
 

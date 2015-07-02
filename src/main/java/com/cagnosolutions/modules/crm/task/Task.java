@@ -1,9 +1,9 @@
 package com.cagnosolutions.modules.crm.task;
 
 import com.cagnosolutions.modules.crm.contact.Contact;
+import org.joda.time.DateTime;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 /**
  * Created by Scott Cagno.
@@ -18,10 +18,11 @@ public class Task {
 	private int id;
 
 	private String name;
-	private Date startDate;
-	private Date endDate;
-	private String startTime = "";
-	private String endTime = "";
+
+	@Column(columnDefinition = "LONGBLOB")
+	private DateTime start;
+	@Column(columnDefinition = "LONGBLOB")
+	private DateTime end;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "contact_fk", nullable = false)
@@ -39,14 +40,12 @@ public class Task {
 
 	public Task() {}
 
-	public Task(int id, String name, Date startDate, Date endDate, String startTime, String endTime, Contact contact,
-				int priority, int status, String description, short allDay, int reminder, int repeatInterval, String color) {
+	public Task(int id, String name, DateTime start, DateTime end, Contact contact, int priority, int status,
+				String description, short allDay, int reminder, int repeatInterval, String color) {
 		this.id = id;
 		this.name = name;
-		this.startDate = startDate;
-		this.endDate = endDate;
-		this.startTime = startTime;
-		this.endTime = endTime;
+		this.start = start;
+		this.end = end;
 		this.contact = contact;
 		this.priority = priority;
 		this.status = status;
@@ -71,22 +70,6 @@ public class Task {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public Date getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-
-	public Date getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
 	}
 
 	public Contact getContact() {
@@ -145,22 +128,6 @@ public class Task {
 		this.color = color;
 	}
 
-	public String getStartTime() {
-		return startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
 	public int getReminder() {
 		return reminder;
 	}
@@ -169,12 +136,28 @@ public class Task {
 		this.reminder = reminder;
 	}
 
+	public DateTime getStart() {
+		return start;
+	}
+
+	public void setStart(DateTime start) {
+		this.start = start;
+	}
+
+	public DateTime getEnd() {
+		return end;
+	}
+
+	public void setEnd(DateTime end) {
+		this.end = end;
+	}
+
 	public String toString() {
 		return "{" +
 				"id:" + id +
 				", title: '" + name + '\'' +
-				", start: ' " + startDate + 'T' + startTime + "Z'" +
-				", end: ' " + endDate + 'T' + endTime + "Z'" +
+				", start: ' " + start + '\'' +
+				", end: ' " + end + '\'' +
 				", contact: " + contact +
 				", priority: " + priority +
 				", status: " + status +
