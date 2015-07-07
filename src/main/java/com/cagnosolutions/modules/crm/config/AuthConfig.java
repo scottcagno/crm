@@ -40,6 +40,7 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
 				.expiredUrl("/login?expired")
 				.maxSessionsPreventsLogin(false).and()
 				.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED);
+		http.csrf().disable();
 	}
 
 	public DataSource getDataSource() {
