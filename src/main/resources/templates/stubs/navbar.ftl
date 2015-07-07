@@ -14,7 +14,7 @@
 				<li><a href="/address">Address</a></li>
 				<li><a href="/company">Company</a></li>
 				<li><a href="/contact">Contact</a></li>
-				<li><a href="/task">Task</a></li>
+				<li><a href="/task/show/cal">Calendar</a></li>
 			</ul>
 		</div>
 	</div>

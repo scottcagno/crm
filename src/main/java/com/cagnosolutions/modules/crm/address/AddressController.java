@@ -30,14 +30,9 @@ public class AddressController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String save(Address newAddress, RedirectAttributes attr, String redirect) {
-		Address existingAddress = addressService.findOne(newAddress.getId());
-		if (existingAddress != null) {
-			newAddress = (Address)mergeObjects.merge(existingAddress, newAddress);
-		}
 		addressService.save(newAddress);
 		attr.addFlashAttribute("alertSuccess", "Successfully saved address");
 		return (redirect != null && !"".equals(redirect)) ? "redirect:" + redirect : "redirect:/address";
-		//return "redirect:/address";
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)

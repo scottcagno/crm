@@ -33,4 +33,3 @@ security:
     role: ADMIN
     name: admin
     password: admin
-  enableCsrf: false
