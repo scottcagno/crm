@@ -2,6 +2,7 @@ package com.cagnosolutions.modules.crm.contact;
 
 import com.cagnosolutions.modules.crm.address.AddressService;
 import com.cagnosolutions.modules.crm.company.CompanyService;
+import com.cagnosolutions.modules.crm.document.DocumentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +28,9 @@ public class ContactController {
 
 	@Autowired
 	private CompanyService companyService;
+
+	@Autowired
+	private DocumentService documentService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String get(Model model) {
@@ -63,6 +67,13 @@ public class ContactController {
 		contactService.delete(id);
 		attr.addFlashAttribute("alertSuccess", "Successfully deleted contact");
 		return "redirect:/contact";
+	}
+
+	@RequestMapping(value = "/view/{id}", method = RequestMethod.GET)
+	public String viewOne(@PathVariable int id, Model model) {
+		model.addAttribute("contact", contactService.findOne(id));
+		model.addAttribute("documents", documentService.findAllByFk(id));
+		return "contact/viewContact";
 	}
 
 }

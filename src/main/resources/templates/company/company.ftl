@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head lang="en">
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/static/css/main.css"/>
-		<title>Company</title>
+		<#include "../stubs/header.ftl"/>
 	</head>
 	<body>
 		<#include "../stubs/navbar.ftl"/>

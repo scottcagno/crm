@@ -70,6 +70,9 @@
 								<#if contact??>
 									<input type="hidden" name="id" value="${(contact.id)!}"/>
 									<div class="form-group">
+										<a href="/contact/view/${(contact.id)!}" class="btn btn-default btn-block">View</a>
+									</div>
+									<div class="form-group">
 										<a href="#" id="deleteButton" data-delete="/contact/${(contact.id)!}" class="btn btn-danger btn-block">Delete</a>
 									</div>
 								</#if>

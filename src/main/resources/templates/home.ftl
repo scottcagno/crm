@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head lang="en">
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/static/css/main.css"/>
+		<#include "stubs/header.ftl"/>
 		<title>Task</title>
 	</head>
 	<body>
