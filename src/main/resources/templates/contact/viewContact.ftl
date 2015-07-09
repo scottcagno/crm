@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head lang="en">
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/static/css/main.css"/>
+		<#include "../stubs/header.ftl"/>
 		<title>Contact</title>
 	</head>
 	<body>
@@ -17,7 +15,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="/">Home</a>
+					<a class="navbar-brand" href="/">Ninja CMS <i class="fa fa-cube"></i></a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right ">
@@ -25,14 +23,16 @@
 						<li><a href="/company">Company</a></li>
 						<li><a href="/contact">Contact</a></li>
 						<li><a href="/task/show/cal">Calendar</a></li>
-
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">New Document<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="/document/dqf200/${(contact.id)!}">DQF200</a></li>
-							</ul>
-						</li>
-
+						<#if newDocuments?has_content>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">New Document<span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<#list newDocuments as newDocument>
+										<li><a href="/document/${(newDocument)!}/${(contact.id)!}">${(newDocument?upper_case)!}</a></li>
+									</#list>
+								</ul>
+							</li>
+						</#if>
 					</ul>
 				</div>
 			</div>
@@ -72,10 +72,19 @@
 							<table class="table table-striped table-bordered">
 								<thead>
 									<tr>
+										<th>Document Name</th>
+										<th>Date Completed</th>
+										<th></th>
 									</tr>
 								</thead>
 								<tbody>
-
+									<#list documents as document>
+										<tr>
+											<td>${(document.name)!}</td>
+											<td>${(document.completed)!}</td>
+											<td><a href="/document/${(document.id)!}">View</a></td>
+										</tr>
+									</#list>
 								</tbody>
 							</table>
 						<#else/>
@@ -85,11 +94,11 @@
 									<br/>
 								</div>
 							</div>
-
 						</#if>
 					</div>
 				</div>
 			</div>
+			<#assign aDateTime = .now/>
 		</div>
 
 	</body>

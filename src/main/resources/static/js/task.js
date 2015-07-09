@@ -17,7 +17,7 @@ $(document).ready(function() {
 		$(form + ' input.clear').val('');
 		$(form + ' select').val('0');
 		$(form + ' textarea').val('');
-		$(form + ' input[id="color"]').val('#0079ff');
+		$(form + ' input[id="color"]').val('#d10000');
 		$(form + ' input[id="id"]').remove();
 		$(form + ' input[id="allDayFalse"]').click();
 		$(form + ' a[id="deleteButton"]').addClass('hide');
@@ -37,7 +37,7 @@ $(document).ready(function() {
 		$(form + ' select[id="reminder"]').val(event.reminder);
 		$(form + ' select[id="repeat"]').val(event.repeatInterval);
 		$(form + ' textarea[id="description"]').val(event.description);
-		$(form + ' input[id="color"]').val(event.color);
+		$(form + ' select[id="color"]').val(event.color);
 		$(form).append('<input type="hidden" id="id" name="id"/>');
 		$(form + ' input[id="id"]').val(event.id);
 		if (event.allDay) {

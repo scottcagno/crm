@@ -37,6 +37,7 @@
 											<option value="${(address.id)!}" ${(company?? && company.address.id == address.id)?string('selected', '')}>${address.street}</option>
 										</#list>
 									</select>
+									<a href="#" data-toggle="modal" data-target="#addressModal">New Address</a>
 								</div>
 								<div class="form-group">
 									<input type="text" class="form-control" name="phone" placeholder="Phone" value="${(company.phone)!}"/>
@@ -109,6 +110,44 @@
 				</div>
 			</div>
 		</div>
+
+		<!-- address model -->
+		<div class="modal fade" id="addressModal" tabindex="-1">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">Add Address</h4>
+					</div>
+					<div class="modal-body clearfix">
+						<div class="col-lg-offset-2 col-lg-8">
+							<form action="/address" method="post">
+								<div class="form-group">
+									<input type="text" class="form-control" name="street" placeholder="Street" value="${(address.street)!}"/>
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" name="city" placeholder="City" value="${(address.city)!}"/>
+								</div>
+								<div class="form-group row">
+									<div class="col-xs-6">
+										<input type="text" class="form-control" name="state" placeholder="ST" value="${(address.state)!}"/>
+									</div>
+									<div class="col-xs-6">
+										<input type="text" class="form-control" name="zip" placeholder="Zip" value="${(address.zip)!}"/>
+									</div>
+								</div>
+								<input type="hidden" name="redirect" value="/company${(company??)?string('/${(company.id)!}', '')}"/>
+								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+								<div class="form-group">
+									<button class="btn btn-block btn-primary">Save</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</body>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

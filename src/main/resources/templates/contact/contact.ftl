@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head lang="en">
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/static/css/main.css"/>
+		<#include "../stubs/header.ftl"/>
 		<title>Contact</title>
 	</head>
 	<body>
@@ -103,7 +101,7 @@
 											<td class="text-center"><a href="/contact/${(contact.id)!}" class="btn btn-xs btn-primary">${(contact.id)!}</a></td>
 											<td>${(contact.firstName)!}</td>
 											<td>${(contact.lastName)}</td>
-											<td><a href="/address/${(contact.addresss.id)!}">${(contact.address.street)!}</a></td>
+											<td><a href="/address/${(contact.address.id)!}">${(contact.address.street)!}</a></td>
 											<td>${(contact.phone)!}</td>
 											<td>${(contact.email)!}</td>
 											<td><a href="/company/${(contact.company.id)!}">${(contact.company.name)!}</a></td>

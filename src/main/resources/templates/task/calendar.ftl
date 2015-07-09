@@ -52,9 +52,14 @@
 										</div>
 										<div class="form-group">
 											<label class="control-label col-xs-3">Color</label>
-											<div class="col-xs-9">
-												<input class="form-control" id="color" type="color" name="color"/>
-											</div>
+											<select name="color" id="color" class="form-control">
+												<option value="#d10000">Red</option>
+												<option value="#ff6622">Orange</option>
+												<option value="#ffda21">Yellow</option>
+												<option value="#33dd00">Green</option>
+												<option value="#1133cc">Blue</option>
+												<option value="#330044">Purple</option>
+											</select>
 										</div>
 										<div class="form-group">
 											<label class="control-label col-xs-3">Customer</label>
@@ -67,8 +72,6 @@
 												</select>
 											</div>
 										</div>
-
-
 
 										<div class="form-group">
 											<input id="startString" type="hidden" class="form-control" name="startString"/>
