@@ -15,11 +15,11 @@
 				<br/>
 				<div class="col-lg-offset-4 col-lg-4">
 					<div class="panel panel-default">
-						<div class="panel-heading">Login</div>
+						<#--<div class="panel-heading">Login</div>-->
 						<div class="panel-body">
 							<form action="/login" method="post">
 								<div class="form-group">
-									<input type="text" name="username" class="form-control" placeholder="Email"/>
+									<input type="text" name="username" class="form-control" placeholder="Username"/>
 								</div>
 								<div class="form-group">
 									<input type="password" name="password" class="form-control" placeholder="Password"/>
