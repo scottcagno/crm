@@ -31,7 +31,7 @@
 
 		</div>
 
-		<!-- task model -->
+		<!-- task modal -->
 		<div class="modal fade" id="taskModal" tabindex="-1">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
@@ -51,16 +51,28 @@
 											</div>
 										</div>
 										<div class="form-group">
-											<label class="control-label col-xs-3">Color</label>
-											<div class="col-xs-9">
-												<select name="color" id="color" class="form-control">
-													<option value="#d10000">Red</option>
-													<option value="#ff6622">Orange</option>
-													<option value="#ffda21">Yellow</option>
-													<option value="#33dd00">Green</option>
-													<option value="#1133cc">Blue</option>
-													<option value="#330044">Purple</option>
-												</select>
+											<div class="col-xs-12">
+												<label>Color</label>
+												<div class="input-group">
+													<span class="input-group-addon" style="background-color: #d10000;">
+														<input id="defaultColor" type="radio" name="color" value="#d10000" checked>
+													</span>
+													<span class="input-group-addon" style="background-color: #ff6622;">
+														<input type="radio" name="color" value="#ff6622">
+													</span>
+													<span class="input-group-addon" style="background-color: #ffda21;">
+														<input type="radio" name="color" value="#ffda21">
+													</span>
+													<span class="input-group-addon" style="background-color: #33dd00;">
+														<input type="radio" name="color" value="#33dd00">
+													</span>
+													<span class="input-group-addon" style="background-color: #1133cc;">
+														<input type="radio" name="color" value="#1133cc">
+													</span>
+													<span class="input-group-addon" style="background-color: #330044;">
+														<input type="radio" name="color" value="#330044">
+													</span>
+												</div>
 											</div>
 										</div>
 										<div class="form-group">
@@ -74,7 +86,6 @@
 												</select>
 											</div>
 										</div>
-
 										<div class="form-group">
 											<input id="startString" type="hidden" class="form-control" name="startString"/>
 										</div>
@@ -152,7 +163,6 @@
 										<a href="#" id="deleteButton" data-delete="" class="btn btn-block btn-danger hide">Delete</a>
 									</div>
 								</div>
-								<input type="hidden" id="id" name="id"/>
 							</form>
 						</div>
 					</div>

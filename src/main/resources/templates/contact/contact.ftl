@@ -34,13 +34,14 @@
 								</div>
 								<div class="form-group">
 									<label>Select Address</label>
-									<select class="form-control" name="addressId">
+									<select id="address" class="form-control" name="addressId">
 										<option value="0"></option>
+										<option value="new">New Address</option>
+										<option value="0">-----</option>
 										<#list addresses as address>
 											<option value="${(address.id)!}" ${(contact?? && contact.address.id == address.id)?string('selected', '')}>${address.street}</option>
 										</#list>
 									</select>
-									<a href="#" data-toggle="modal" data-target="#addressModal">New Address</a>
 								</div>
 								<div class="form-group">
 									<input type="text" class="form-control" name="phone" placeholder="Phone" value="${(contact.phone)!}"/>
@@ -50,13 +51,14 @@
 								</div>
 								<div class="form-group">
 									<label>Select Company</label>
-									<select class="form-control" name="companyId">
+									<select id="company" class="form-control" name="companyId">
 										<option value="0"></option>
+										<option value="new">New Company</option>
+										<option value="0">-----</option>
 										<#list companies as company>
 											<option value="${(company.id)!}" ${(contact?? && contact.company.id == company.id)?string('selected', '')}>${company.name}</option>
 										</#list>
 									</select>
-									<a href="#" data-toggle="modal" data-target="#companyModal">New Company</a>
 								</div>
 								<div class="form-group">
 									<input type="text" class="form-control" name="description" placeholder="Description" value="${(contact.description)!}"/>
@@ -212,4 +214,5 @@
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="/static/js/main.js"></script>
 	<script src="/static/js/delete.js"></script>
+	<script src="/static/js/select.js"></script>
 </html>

@@ -31,13 +31,13 @@
 								</div>
 								<div class="form-group">
 									<label>Select Address</label>
-									<select class="form-control" name="addressId">
+									<select id="address" class="form-control" name="addressId">
 										<option value="0"></option>
+										<option value="new">New Address</option>
 										<#list addresses as address>
 											<option value="${(address.id)!}" ${(company?? && company.address.id == address.id)?string('selected', '')}>${address.street}</option>
 										</#list>
 									</select>
-									<a href="#" data-toggle="modal" data-target="#addressModal">New Address</a>
 								</div>
 								<div class="form-group">
 									<input type="text" class="form-control" name="phone" placeholder="Phone" value="${(company.phone)!}"/>
@@ -153,4 +153,5 @@
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="/static/js/main.js"></script>
 	<script src="/static/js/delete.js"></script>
+	<script src="/static/js/select.js"></script>
 </html>

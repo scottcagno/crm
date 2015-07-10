@@ -33,6 +33,7 @@
 								</ul>
 							</li>
 						</#if>
+						<li><a href="/logout">Logout</a></li>
 					</ul>
 				</div>
 			</div>

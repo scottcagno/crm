@@ -46,8 +46,12 @@ public class AddressController {
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
 	public String delete(@PathVariable int id, RedirectAttributes attr) {
-		addressService.delete(id);
-		attr.addFlashAttribute("alertSuccess", "Successfully deleted address");
+		try {
+			addressService.delete(id);
+			attr.addFlashAttribute("alertSuccess", "Successfully deleted address");
+		} catch (Exception e) {
+			attr.addFlashAttribute("alertError", "Address is currently in use. Cannot delete it at this time.");
+		}
 		return "redirect:/secure/address";
 	}
 

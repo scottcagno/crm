@@ -17,7 +17,7 @@ $(document).ready(function() {
 		$(form + ' input.clear').val('');
 		$(form + ' select').val('0');
 		$(form + ' textarea').val('');
-		$(form + ' input[id="color"]').val('#d10000');
+		$(form + ' input[id="defaultColor"]').prop('checked', 'checked');
 		$(form + ' input[id="id"]').remove();
 		$(form + ' input[id="allDayFalse"]').click();
 		$(form + ' a[id="deleteButton"]').addClass('hide');
@@ -37,13 +37,18 @@ $(document).ready(function() {
 		$(form + ' select[id="reminder"]').val(event.reminder);
 		$(form + ' select[id="repeat"]').val(event.repeatInterval);
 		$(form + ' textarea[id="description"]').val(event.description);
-		$(form + ' select[id="color"]').val(event.color);
 		$(form).append('<input type="hidden" id="id" name="id"/>');
+		var colors = $(form + ' input[name="color"]');
+		for (var i = 0; i < colors.length; i++) {
+			if (colors[i].value === event.color) {
+				$(colors[i]).prop('checked', 'checked');
+			}
+		}
 		$(form + ' input[id="id"]').val(event.id);
 		if (event.allDay) {
 			$(form + ' input[id="allDayTrue"]').click();
 		}
-		$(form + ' a[id="deleteButton"]').attr('data-delete', '/task/' + event.id);
+		$(form + ' a[id="deleteButton"]').attr('data-delete', '/secure/task/' + event.id);
 		$(form + ' a[id="deleteButton"]').removeClass('hide');
 	}
 
@@ -53,9 +58,9 @@ $(document).ready(function() {
 			center: 'title',
 			right: 'month,agendaWeek,agendaDay'
 		},
-		eventClick: function(event) {
-			console.log(event)
+		eventClick: function(event, jsEvent, view) {
 			fillForm(event);
+			$(form + ' input[id="view"]').val(view.name);
 			$('#taskModal').modal('show');
 		},
 		selectable: true,
@@ -75,6 +80,7 @@ $(document).ready(function() {
 					$(form + ' input[id="endString"]').val(end.toISOString());
 				}
 				$(form + ' input[id="view"]').val(view.name);
+				console.log("view" + view.name);
 				$('#taskModal').modal('show');
 			}
 		},
