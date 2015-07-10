@@ -25,7 +25,7 @@
     <body vlink="blue" link="blue">
 		<#include "../stubs/docNavbar.ftl"/>
         <div id="page1-div" style="position:relative;width:1224px;height:1584px;">
-            <form action="/document/dqf200/${(contact.id)!}" method="post">
+            <form action="/secure/document/dqf200/${(contact.id)!}" method="post">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                 <p style="position:absolute;top:79px;left:195px;white-space:nowrap" class="ft10">Annual&#160;Inquiry&#160;and&#160;Review&#160;of&#160;Driving&#160;Record&#160;</p>
                 <p style="position:absolute;top:79px;left:985px;white-space:nowrap" class="ft110">DQF&#160;<br />200<b>&#160;</b></p>

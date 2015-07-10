@@ -41,7 +41,7 @@
 					</div>
 					<div class="modal-body clearfix">
 						<div class="col-lg-12">
-							<form id="taskForm" action="/task" method="post" class="form-horizontal">
+							<form id="taskForm" action="/secure/task" method="post" class="form-horizontal">
 								<div class="row">
 									<div class="col-lg-6">
 										<div class="form-group">
@@ -52,14 +52,16 @@
 										</div>
 										<div class="form-group">
 											<label class="control-label col-xs-3">Color</label>
-											<select name="color" id="color" class="form-control">
-												<option value="#d10000">Red</option>
-												<option value="#ff6622">Orange</option>
-												<option value="#ffda21">Yellow</option>
-												<option value="#33dd00">Green</option>
-												<option value="#1133cc">Blue</option>
-												<option value="#330044">Purple</option>
-											</select>
+											<div class="col-xs-9">
+												<select name="color" id="color" class="form-control">
+													<option value="#d10000">Red</option>
+													<option value="#ff6622">Orange</option>
+													<option value="#ffda21">Yellow</option>
+													<option value="#33dd00">Green</option>
+													<option value="#1133cc">Blue</option>
+													<option value="#330044">Purple</option>
+												</select>
+											</div>
 										</div>
 										<div class="form-group">
 											<label class="control-label col-xs-3">Customer</label>

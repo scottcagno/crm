@@ -23,7 +23,7 @@
     </head>
     <body vlink="blue" link="blue">
 		<#include "../stubs/docNavbar.ftl"/>
-		<form action="/document/dqf180/${(contact.id)!}" method="post">
+		<form action="/secure/document/dqf180/${(contact.id)!}" method="post">
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
         	<div id="page1-div" style="position:relative;width:918px;height:1188px;">
         	    <p style="position:absolute;top:59px;left:399px;white-space:nowrap" class="ft10">Certification&#160;of&#160;Violations&#160;</p>

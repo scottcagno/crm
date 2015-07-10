@@ -22,13 +22,13 @@
 						<li><a href="/secure/address">Address</a></li>
 						<li><a href="/secure/company">Company</a></li>
 						<li><a href="/secure/contact">Contact</a></li>
-						<li><a href="/secure/task/show/cal">Calendar</a></li>
+						<li><a href="/secure/task">Calendar</a></li>
 						<#if newDocuments?has_content>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">New Document<span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<#list newDocuments as newDocument>
-										<li><a href="/document/${(newDocument)!}/${(contact.id)!}">${(newDocument?upper_case)!}</a></li>
+										<li><a href="/secure/document/${(newDocument)!}/${(contact.id)!}">${(newDocument?upper_case)!}</a></li>
 									</#list>
 								</ul>
 							</li>
@@ -82,7 +82,7 @@
 										<tr>
 											<td>${(document.name)!}</td>
 											<td>${(document.completed)!}</td>
-											<td><a href="/document/${(document.id)!}">View</a></td>
+											<td><a href="/secure/document/${(document.id)!}">View</a></td>
 										</tr>
 									</#list>
 								</tbody>

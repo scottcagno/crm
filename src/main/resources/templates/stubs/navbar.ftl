@@ -13,7 +13,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="/secure/company">Company</a></li>
 				<li><a href="/secure/contact">Contact</a></li>
-				<li><a href="/secure/task/show/cal">Calendar</a></li>
+				<li><a href="/secure/task">Calendar</a></li>
 			</ul>
 		</div>
 	</div>

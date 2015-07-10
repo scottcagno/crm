@@ -17,7 +17,7 @@
 					<a href="/secure/contact"><i class="fa fa-5x fa-user"></i><br/><br/>Contact</a>
 				</div>
 				<div class="col-lg-4">
-					<a href="/secure/task/show/cal"><i class="fa fa-5x fa-calendar"></i><br/><br/>Calendar</a>
+					<a href="/secure/task"><i class="fa fa-5x fa-calendar"></i><br/><br/>Calendar</a>
 				</div>
 			</h1>
 		</div>
