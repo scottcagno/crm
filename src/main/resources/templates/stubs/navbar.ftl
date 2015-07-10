@@ -14,6 +14,7 @@
 				<li><a href="/secure/company">Company</a></li>
 				<li><a href="/secure/contact">Contact</a></li>
 				<li><a href="/secure/task">Calendar</a></li>
+				<li><a href="/logout">Logout</a></li>
 			</ul>
 		</div>
 	</div>

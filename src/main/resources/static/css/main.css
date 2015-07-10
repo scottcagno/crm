@@ -9,3 +9,34 @@ textarea {
 .eventRed {
 	background-color: red;
 }
+
+body {
+	background-color: #fcfcfc;
+}
+
+.mute-contents {
+	padding: 20px 0px 20px 0px;
+	margin: 0px 2px 0px 2px;
+	border: 3px solid #33455c;
+	border-radius: 5px;
+}
+
+.mute-contents > * {
+	color: #33455c;
+}
+
+.mute-contents:hover {
+	border-color: #909194;
+}
+
+.mute-contents > *:hover {
+	color: #909194;
+	text-decoration: none;
+}
+
+.logo-primary {
+	color: #f79729;
+}
+.logo-primary:hover {
+	color: #33455c;
+}

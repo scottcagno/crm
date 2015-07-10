@@ -2,13 +2,17 @@
 <html>
 	<head lang="en">
 		<#include "stubs/header.ftl"/>
-		<title>Ninja CMS</title>
+		<title>Login</title>
 	</head>
 	<body>
 		<#include "stubs/alert.ftl"/>
 		<div class="container">
 			<div class="row">
 				<br/><br/>
+				<div class="text-center">
+					<img src="/static/img/cns-logo-lg.png" alt="CNS Truck Licensing Logo"/>
+				</div>
+				<br/>
 				<div class="col-lg-offset-4 col-lg-4">
 					<div class="panel panel-default">
 						<div class="panel-heading">Login</div>
