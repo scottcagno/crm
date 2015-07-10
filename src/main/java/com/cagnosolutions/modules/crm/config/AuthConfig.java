@@ -30,10 +30,10 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/secure/**")
 				.hasAnyRole("ADMIN", "USER");
 		http.formLogin().loginPage("/login")
-				.defaultSuccessUrl("/");
-				//.successHandler(new CustomAuthenticationSuccessHandler());
+				.defaultSuccessUrl("/")
+				.successHandler(new CustomAuthenticationSuccessHandler());
 		http.logout().invalidateHttpSession(true)
-				.logoutSuccessUrl("/")
+				.logoutSuccessUrl("/login")
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout", "GET"));
 		http.sessionManagement()
 				.maximumSessions(1)
