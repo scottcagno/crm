@@ -12,7 +12,7 @@ public class RootController {
 		return "redirect:/home";
 	}
 
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	@RequestMapping(value = "/secure/home", method = RequestMethod.GET)
 	public String home() {
 		return "home";
 	}

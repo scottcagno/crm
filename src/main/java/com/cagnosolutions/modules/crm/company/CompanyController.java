@@ -19,7 +19,7 @@ import java.util.Map;
  */
 
 @Controller
-@RequestMapping("/company")
+@RequestMapping("/secure/company")
 public class CompanyController {
 
 	@Autowired

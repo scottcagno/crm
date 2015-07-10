@@ -21,7 +21,7 @@ import java.util.List;
  */
 
 @Controller
-@RequestMapping("/contact")
+@RequestMapping("/secure/contact")
 public class ContactController {
 
 	@Autowired

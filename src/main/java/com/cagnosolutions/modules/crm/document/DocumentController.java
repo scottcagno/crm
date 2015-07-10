@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/document")
+@RequestMapping("/secure/document")
 public class DocumentController {
 
 	@Autowired

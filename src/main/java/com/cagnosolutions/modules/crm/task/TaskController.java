@@ -16,7 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  */
 
 @Controller
-@RequestMapping("/task")
+@RequestMapping("/secure/task")
 public class TaskController {
 	
 	@Autowired

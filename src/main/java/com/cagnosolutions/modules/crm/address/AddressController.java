@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/address")
+@RequestMapping("/secure/address")
 public class AddressController {
 
 	@Autowired
