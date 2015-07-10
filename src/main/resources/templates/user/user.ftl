@@ -106,7 +106,6 @@
 									<#list users as user>
 										<tr>
 											<td class="text-center"><a href="/admin/user/${(user.id)!}" class="btn btn-xs btn-primary">${(user.id)!}</a></td>
-											<td>${(user.id)!}</td>
 											<td>${(user.username)!}</td>
 											<td>${(user.role)!}</td>
 										</tr>
