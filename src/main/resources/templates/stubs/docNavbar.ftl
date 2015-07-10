@@ -15,7 +15,7 @@
 				<li><a href="/company">Company</a></li>
 				<li><a href="/contact">Contact</a></li>
 				<li><a href="/task/show/cal">Calendar</a></li>-->
-				<li><a href="/secure/contact/view/${(contact.id)!}">Back To ${(contact.firstName)!}</a></li>
+				<li><a href="/secure/contact/view/${(fk)!}">Back To ${(name)!}</a></li>
 			</ul>
 		</div>
 	</div>

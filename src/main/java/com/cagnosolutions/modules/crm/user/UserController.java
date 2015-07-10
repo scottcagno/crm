@@ -1,6 +1,7 @@
 package com.cagnosolutions.modules.crm.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,8 +24,16 @@ public class UserController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String save(User user, RedirectAttributes attr) {
-		userService.save(user);
-		attr.addFlashAttribute("alertSuccess", "Successfully saved user");
+		if (userService.canUpdate(user.getId(), user.getUsername())) {
+
+			if (user.getId() == 0 || user.getPassword()[0] != '$') {
+				user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
+
+
+
+			userService.save(user);
+			attr.addFlashAttribute("alertSuccess", "Successfully saved user");
+			}
 		return "redirect:/admin/user";
 	}
 

@@ -33,13 +33,17 @@
 									<input type="password" class="form-control" name="password" placeholder="Password" value="${(user.password)!}"/>
 								</div>
 								<div class="form-group">
-									<select name="role" class="form-control"></select>
+									<label>Role</label>
+									<select name="role" class="form-control">
+										<option value="ROLE_USER">User</option>
+										<option value="ROLE_ADMIN">Admin</option>
+									</select>
 								</div>
 								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 								<div class="form-group">
 									<button class="btn btn-block btn-primary">Save</button>
 								</div>
-								<#if address??>
+								<#if user??>
 									<input type="hidden" name="id" value="${(user.id)!}"/>
 									<div class="form-group">
 										<a href="#" id="deleteButton" data-delete="/admin/user/${(user.id)!}" class="btn btn-danger btn-block">Delete</a>
@@ -51,26 +55,23 @@
 				</div>
 				<div class="col-lg-9">
 					<div class="panel panel-default">
-						<div class="panel-heading">Addresses</div>
-						<#if addresses?has_content>
+						<div class="panel-heading">Users</div>
+						<#if users?has_content>
 							<table class="table table-striped table-bordered">
 								<thead>
 									<tr>
 										<th>ID</th>
-										<th>Street</th>
-										<th>City</th>
-										<th>State</th>
-										<th>Zip</th>
+										<th>Email</th>
+										<th>Role</th>
 									</tr>
 								</thead>
 								<tbody>
-									<#list addresses as address>
+									<#list users as user>
 										<tr>
-											<td class="text-center"><a href="/secure/address/${(address.id)!}" class="btn btn-xs btn-primary">${(address.id)!}</a></td>
-											<td>${(address.street)!}</td>
-											<td>${(address.city)!}</td>
-											<td>${(address.state)!}</td>
-											<td>${(address.zip)!}</td>
+											<td class="text-center"><a href="/admin/user/${(user.id)!}" class="btn btn-xs btn-primary">${(user.id)!}</a></td>
+											<td>${(user.id)!}</td>
+											<td>${(user.username)!}</td>
+											<td>${(user.role)!}</td>
 										</tr>
 									</#list>
 								</tbody>
@@ -78,7 +79,7 @@
 						<#else/>
 							<div class="text-center panel-body">
 								<div class="alert alert-info">
-									<p class="lead">No Addresses</p>
+									<p class="lead">No Users</p>
 									<br/>
 								</div>
 							</div>

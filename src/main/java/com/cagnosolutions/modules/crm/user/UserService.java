@@ -39,4 +39,8 @@ public class UserService {
 		Direction direction = ("desc".equals(dir) ? Direction.DESC : Direction.ASC);
 		return repo.findAll(new PageRequest(page, size, direction, fields));
 	}
+
+	public boolean canUpdate(int id, String username) {
+		return (repo.canUpdate(id, username) == 0);
+	}
 }

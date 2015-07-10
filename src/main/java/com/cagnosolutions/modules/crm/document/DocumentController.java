@@ -1,5 +1,6 @@
 package com.cagnosolutions.modules.crm.document;
 
+import com.cagnosolutions.modules.crm.contact.Contact;
 import com.cagnosolutions.modules.crm.contact.ContactService;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,9 @@ public class DocumentController {
 
 	@RequestMapping(value = "/{docName}/{fk}", method = RequestMethod.GET)
 	public String get(@PathVariable String docName, @PathVariable int fk, Model model) {
-		model.addAttribute("contact", contactService.findOne(fk));
+		Contact contact =  contactService.findOne(fk);
+		model.addAttribute("contact", contact);
+		model.addAttribute("name", contact.getFirstName());
 		return "pdf/" + docName;
 	}
 
@@ -54,7 +57,8 @@ public class DocumentController {
 		Document document = documentService.findOne(id);
 		model.addAttribute("document", document);
 		model.addAttribute("script", "<script src=\"/static/js/document.js\"></script>");
-		model.addAttribute("contact", contactService.findOne(document.getFk()));
+		model.addAttribute("name", contactService.findOne(document.getFk()).getFirstName());
+		model.addAttribute("fk", document.getFk());
 		return "pdf/" + document.getName();
 	}
 }
