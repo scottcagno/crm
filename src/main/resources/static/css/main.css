@@ -1,3 +1,9 @@
+body {
+	background-color: #fcfcfc;
+	font-family: 'Arial', sans-serif;
+	letter-spacing: -.5px;
+}
+
 .form-horizontal .control-label {
 	text-align: left;
 }
@@ -8,10 +14,6 @@ textarea {
 
 .eventRed {
 	background-color: red;
-}
-
-body {
-	background-color: #fcfcfc;
 }
 
 .mute-contents {
@@ -26,11 +28,13 @@ body {
 }
 
 .mute-contents:hover {
-	border-color: #909194;
+	/*color: #909194;*/
+	border-color: #f79729;
 }
 
 .mute-contents > *:hover {
-	color: #909194;
+	/*color: #909194;*/
+	color: #f79729;
 	text-decoration: none;
 }
 
@@ -39,4 +43,9 @@ body {
 }
 .logo-primary:hover {
 	color: #33455c;
+}
+
+.navbar-brand > img.navbar-logo {
+	position: absolute;
+	top: 5px;
 }

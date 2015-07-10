@@ -7,7 +7,11 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/"><i class="fa fa-cube"></i>&nbsp;CMS System</a>
+			<a class="navbar-brand" href="/">
+				<img class="navbar-logo" src="/static/img/cns-logo-sm.png" alt="CNS Truck Licensing Logo"/>
+				<span style="margin-left:110px;">CMS Prototype</span>
+			<#--<i class="fa fa-cube"></i>&nbsp;CMS System-->
+			</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right ">
