@@ -22,10 +22,10 @@
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
 							Contact
-							<a href="/contact" class="pull-right btn btn-xs btn-default">Clear</a>
+							<a href="/secure/contact" class="pull-right btn btn-xs btn-default">Clear</a>
 						</div>
 						<div class="panel-body">
-							<form action="/contact" method="post">
+							<form action="/secure/contact" method="post">
 								<div class="form-group">
 									<input type="text" class="form-control" name="firstName" placeholder="First Name" value="${(contact.firstName)!}"/>
 								</div>
@@ -68,10 +68,10 @@
 								<#if contact??>
 									<input type="hidden" name="id" value="${(contact.id)!}"/>
 									<div class="form-group">
-										<a href="/contact/view/${(contact.id)!}" class="btn btn-default btn-block">View</a>
+										<a href="/secure/contact/view/${(contact.id)!}" class="btn btn-default btn-block">View</a>
 									</div>
 									<div class="form-group">
-										<a href="#" id="deleteButton" data-delete="/contact/${(contact.id)!}" class="btn btn-danger btn-block">Delete</a>
+										<a href="#" id="deleteButton" data-delete="/secure/contact/${(contact.id)!}" class="btn btn-danger btn-block">Delete</a>
 									</div>
 								</#if>
 							</form>
@@ -98,13 +98,13 @@
 								<tbody>
 									<#list contacts as contact>
 										<tr>
-											<td class="text-center"><a href="/contact/${(contact.id)!}" class="btn btn-xs btn-primary">${(contact.id)!}</a></td>
+											<td class="text-center"><a href="/secure/contact/${(contact.id)!}" class="btn btn-xs btn-primary">${(contact.id)!}</a></td>
 											<td>${(contact.firstName)!}</td>
 											<td>${(contact.lastName)}</td>
-											<td><a href="/address/${(contact.address.id)!}">${(contact.address.street)!}</a></td>
+											<td><a href="/secure/address/${(contact.address.id)!}">${(contact.address.street)!}</a></td>
 											<td>${(contact.phone)!}</td>
 											<td>${(contact.email)!}</td>
-											<td><a href="/company/${(contact.company.id)!}">${(contact.company.name)!}</a></td>
+											<td><a href="/secure/company/${(contact.company.id)!}">${(contact.company.name)!}</a></td>
 											<td>${(contact.description)!}</td>
 										</tr>
 									</#list>
@@ -133,7 +133,7 @@
 					</div>
 					<div class="modal-body clearfix">
 						<div class="col-lg-offset-2 col-lg-8">
-							<form action="/address" method="post">
+							<form action="/secure/address" method="post">
 								<div class="form-group">
 									<input type="text" class="form-control" name="street" placeholder="Street" value="${(address.street)!}"/>
 								</div>
@@ -148,7 +148,7 @@
 										<input type="text" class="form-control" name="zip" placeholder="Zip" value="${(address.zip)!}"/>
 									</div>
 								</div>
-								<input type="hidden" name="redirect" value="/contact${(contact??)?string('/${(contact.id)!}', '')}"/>
+								<input type="hidden" name="redirect" value="/secure/contact${(contact??)?string('/${(contact.id)!}', '')}"/>
 								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 								<div class="form-group">
 									<button class="btn btn-block btn-primary">Save</button>
@@ -170,7 +170,7 @@
 					</div>
 					<div class="modal-body clearfix">
 						<div class="col-lg-offset-2 col-lg-8">
-							<form action="/company" method="post">
+							<form action="/secure/company" method="post">
 								<div class="form-group">
 									<input type="text" class="form-control" name="name" placeholder="Name"/>
 								</div>
@@ -195,7 +195,7 @@
 								<div class="form-group">
 									<input type="text" class="form-control" name="description" placeholder="Description"/>
 								</div>
-								<input type="hidden" name="redirect" value="/contact${(contact??)?string('/${(contact.id)!}', '')}"/>
+								<input type="hidden" name="redirect" value="/secure/contact${(contact??)?string('/${(contact.id)!}', '')}"/>
 								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 								<div class="form-group">
 									<button class="btn btn-block btn-primary">Save</button>

@@ -22,10 +22,10 @@
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
 							Company
-							<a href="/company" class="pull-right btn btn-xs btn-default">Clear</a>
+							<a href="/secure/company" class="pull-right btn btn-xs btn-default">Clear</a>
 						</div>
 						<div class="panel-body">
-							<form action="/company" method="post">
+							<form action="/secure/company" method="post">
 								<div class="form-group">
 									<input type="text" class="form-control" name="name" placeholder="Name" value="${(company.name)!}"/>
 								</div>
@@ -58,10 +58,10 @@
 								<#if company??>
 									<input type="hidden" name="id" value="${(company.id)!}"/>
 									<div class="form-group">
-										<a href="/company/${(company.id)!}/contact" class="btn btn-success btn-block">View <Contacts></Contacts></a>
+										<a href="/secure/company/${(company.id)!}/contact" class="btn btn-success btn-block">View <Contacts></Contacts></a>
 									</div>
 									<div class="form-group">
-										<a href="#" id="deleteButton" data-delete="/company/${(company.id)!}" class="btn btn-danger btn-block">Delete</a>
+										<a href="#" id="deleteButton" data-delete="/secure/company/${(company.id)!}" class="btn btn-danger btn-block">Delete</a>
 									</div>
 								</#if>
 							</form>
@@ -87,9 +87,9 @@
 								<tbody>
 									<#list companies as company>
 										<tr>
-											<td class="text-center"><a href="/company/${(company.id)!}" class="btn btn-xs btn-primary">${(company.id)!}</a></td>
+											<td class="text-center"><a href="/secure/company/${(company.id)!}" class="btn btn-xs btn-primary">${(company.id)!}</a></td>
 											<td>${(company.name)!}</td>
-											<td><a href="/address/${(company.address.id)!}">${(company.address.street)!}</a></td>
+											<td><a href="/secure/address/${(company.address.id)!}">${(company.address.street)!}</a></td>
 											<td>${(company.phone)!}</td>
 											<td>${(company.fax)!}</td>
 											<td><a href="${(company.website?? && company.website?starts_with('http://')) ? string ((company.website)!,'http://${(company.website)!}')}" target="_blank">${(company.website)!}</a></td>
@@ -121,7 +121,7 @@
 					</div>
 					<div class="modal-body clearfix">
 						<div class="col-lg-offset-2 col-lg-8">
-							<form action="/address" method="post">
+							<form action="/secure/address" method="post">
 								<div class="form-group">
 									<input type="text" class="form-control" name="street" placeholder="Street" value="${(address.street)!}"/>
 								</div>
@@ -136,7 +136,7 @@
 										<input type="text" class="form-control" name="zip" placeholder="Zip" value="${(address.zip)!}"/>
 									</div>
 								</div>
-								<input type="hidden" name="redirect" value="/company${(company??)?string('/${(company.id)!}', '')}"/>
+								<input type="hidden" name="redirect" value="/secure/company${(company??)?string('/${(company.id)!}', '')}"/>
 								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 								<div class="form-group">
 									<button class="btn btn-block btn-primary">Save</button>

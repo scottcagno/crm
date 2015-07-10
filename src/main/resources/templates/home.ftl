@@ -11,13 +11,13 @@
 			<br/><br/>
 			<h1>
 				<div class="col-lg-4">
-					<a href="/company"><i class="fa fa-5x fa-building-o"></i><br/><br/>Company</a>
+					<a href="/secure/company"><i class="fa fa-5x fa-building-o"></i><br/><br/>Company</a>
 				</div>
 				<div class="col-lg-4">
-					<a href="/contact"><i class="fa fa-5x fa-user"></i><br/><br/>Contact</a>
+					<a href="/secure/contact"><i class="fa fa-5x fa-user"></i><br/><br/>Contact</a>
 				</div>
 				<div class="col-lg-4">
-					<a href="/task/show/cal"><i class="fa fa-5x fa-calendar"></i><br/><br/>Calendar</a>
+					<a href="/secure/task/show/cal"><i class="fa fa-5x fa-calendar"></i><br/><br/>Calendar</a>
 				</div>
 			</h1>
 		</div>

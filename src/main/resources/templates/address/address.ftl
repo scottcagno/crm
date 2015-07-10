@@ -22,10 +22,10 @@
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
 							Address
-							<a href="/address" class="pull-right btn btn-xs btn-default">Clear</a>
+							<a href="/secure/address" class="pull-right btn btn-xs btn-default">Clear</a>
 						</div>
 						<div class="panel-body">
-							<form action="/address" method="post">
+							<form action="/secure/address" method="post">
 								<div class="form-group">
 									<input type="text" class="form-control" name="street" placeholder="Street" value="${(address.street)!}"/>
 								</div>
@@ -47,7 +47,7 @@
 								<#if address??>
 									<input type="hidden" name="id" value="${(address.id)!}"/>
 									<div class="form-group">
-										<a href="#" id="deleteButton" data-delete="/address/${(address.id)!}" class="btn btn-danger btn-block">Delete</a>
+										<a href="#" id="deleteButton" data-delete="/secure/address/${(address.id)!}" class="btn btn-danger btn-block">Delete</a>
 									</div>
 								</#if>
 							</form>
@@ -71,7 +71,7 @@
 								<tbody>
 									<#list addresses as address>
 										<tr>
-											<td class="text-center"><a href="/address/${(address.id)!}" class="btn btn-xs btn-primary">${(address.id)!}</a></td>
+											<td class="text-center"><a href="/secure/address/${(address.id)!}" class="btn btn-xs btn-primary">${(address.id)!}</a></td>
 											<td>${(address.street)!}</td>
 											<td>${(address.city)!}</td>
 											<td>${(address.state)!}</td>

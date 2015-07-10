@@ -10,6 +10,8 @@ public class UserSession {
 
 	private Boolean admin;
 
+	public UserSession() {}
+
 	public UserSession(Boolean admin) {
 		this.admin = admin;
 	}

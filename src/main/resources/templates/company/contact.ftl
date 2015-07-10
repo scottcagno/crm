@@ -56,13 +56,13 @@
 								<tbody>
 									<#list company.contacts as contact>
 										<tr>
-											<td class="text-center"><a href="/contact/${(contact.id)!}" class="btn btn-xs btn-primary">${(contact.id)!}</a></td>
+											<td class="text-center"><a href="/secure/contact/${(contact.id)!}" class="btn btn-xs btn-primary">${(contact.id)!}</a></td>
 											<td>${(contact.firstName)!}</td>
 											<td>${(contact.lastName)!}</td>
-											<td><a href="/address/${(contact.addresss.id)!}">${(contact.address.street)!}</a></td>
+											<td><a href="/secure/address/${(contact.address.id)!}">${(contact.address.street)!}</a></td>
 											<td>${(contact.phone)!}</td>
 											<td>${(contact.email)!}</td>
-											<td><a href="/company/${(company.contact.company.id)!}">${(contact.company.name)!}</a></td>
+											<td><a href="/secure/company/${(company.contact.company.id)!}">${(contact.company.name)!}</a></td>
 											<td>${(contact.description)!}</td>
 										</tr>
 									</#list>

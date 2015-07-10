@@ -35,7 +35,7 @@ public class DocumentController {
 		document.getCompleted();
 		document.setData((HashMap<String, String>) allRequestParams);
 		documentService.save(document);
-		return "redirect:/contact/view/" + document.getFk();
+		return "redirect:/secure/contact/view/" + document.getFk();
 	}
 
 	/*@RequestMapping(value = "/{docName}/{fk}", method = RequestMethod.POST)

@@ -25,18 +25,18 @@ public class TaskController {
 	@Autowired
 	private ContactService contactService;
 
-	@RequestMapping(method = RequestMethod.GET)
+	/*@RequestMapping(method = RequestMethod.GET)
 	public String get(Model model) {
 		model.addAttribute("tasks", taskService.findAll());
 		model.addAttribute("contacts", contactService.findAll());
 		return "task/task";
-	}
+	}*/
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String save(Task task, int contactId, RedirectAttributes attr, String startString, String endString, String view) {
 		if (contactId == 0) {
 			attr.addFlashAttribute("alertError", "Invalid contact");
-			return "redirect:/task/show/cal";
+			return "redirect:/secure/task";
 		}
 		task.setStart(new DateTime(startString));
 		task.setEnd(new DateTime(endString));
@@ -45,7 +45,7 @@ public class TaskController {
 		attr.addFlashAttribute("alertSuccess", "Successfully saved task");
 		attr.addFlashAttribute("view", view);
 		attr.addFlashAttribute("day", startString);
-		return "redirect:/task/show/cal";
+		return "redirect:/secure/task";
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -63,10 +63,10 @@ public class TaskController {
 		attr.addFlashAttribute("alertSuccess", "Successfully deleted task");
 		attr.addFlashAttribute("view", view);
 		attr.addFlashAttribute("day", task.getStart().toString());
-		return "redirect:/task/show/cal";
+		return "redirect:/secure/task";
 	}
 
-	@RequestMapping(value = "/show/cal", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public String cal(Model model) {
 		model.addAttribute("tasks", taskService.findAll());
 		model.addAttribute("contacts", contactService.findAll());

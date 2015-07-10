@@ -19,10 +19,10 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right ">
-						<li><a href="/address">Address</a></li>
-						<li><a href="/company">Company</a></li>
-						<li><a href="/contact">Contact</a></li>
-						<li><a href="/task/show/cal">Calendar</a></li>
+						<li><a href="/secure/address">Address</a></li>
+						<li><a href="/secure/company">Company</a></li>
+						<li><a href="/secure/contact">Contact</a></li>
+						<li><a href="/secure/task/show/cal">Calendar</a></li>
 						<#if newDocuments?has_content>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">New Document<span class="caret"></span></a>
@@ -61,7 +61,7 @@
 							${(contact.address.city)!} ${(contact.address.state)!}, ${(contact.address.zip)!}<br/>
 							${(contact.phone)!}<br/>
 							${(contact.email)!}<br/>
-							<a href="/company/${(contact.company.id)!}">${(contact.company.name)!}</a>
+							<a href="/secure/company/${(contact.company.id)!}">${(contact.company.name)!}</a>
 						</div>
 					</div>
 				</div>

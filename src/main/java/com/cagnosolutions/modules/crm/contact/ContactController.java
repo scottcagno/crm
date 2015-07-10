@@ -47,14 +47,14 @@ public class ContactController {
 	@RequestMapping(method = RequestMethod.POST)
 	public String save(Contact contact, RedirectAttributes attr, int addressId, int companyId) {
 		if (addressId == 0 || companyId == 0) {
-			attr.addFlashAttribute("alertError", "Invalid address or contact");
-			return (contact.getId() == 0) ? "redirect:/contact" : "redirect:/contact/" + contact.getId();
+			attr.addFlashAttribute("alertError", "Invalid address or company");
+			return (contact.getId() == 0) ? "redirect:/secure/contact" : "redirect:/secure/contact/" + contact.getId();
 		}
 		contact.setAddress(addressService.findOne(addressId));
 		contact.setCompany(companyService.findOne(companyId));
 		contactService.save(contact);
 		attr.addFlashAttribute("alertSuccess", "Successfully saved contact");
-		return "redirect:/contact";
+		return "redirect:/secure/contact";
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -70,7 +70,7 @@ public class ContactController {
 	public String delete(@PathVariable int id, RedirectAttributes attr) {
 		contactService.delete(id);
 		attr.addFlashAttribute("alertSuccess", "Successfully deleted contact");
-		return "redirect:/contact";
+		return "redirect:/secure/contact";
 	}
 
 	@RequestMapping(value = "/view/{id}", method = RequestMethod.GET)
@@ -80,6 +80,7 @@ public class ContactController {
 		model.addAttribute("newDocuments", getDocuments());
 		return "contact/viewContact";
 	}
+
 	List<String> getDocuments() {
 		List<String> names = new ArrayList<>();
 		ClassLoader classLoader = getClass().getClassLoader();

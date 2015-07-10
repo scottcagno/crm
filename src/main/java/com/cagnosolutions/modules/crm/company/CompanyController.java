@@ -45,12 +45,12 @@ public class CompanyController {
 			if (redirect != null && !"".equals(redirect)) {
 				return "redirect:" + redirect;
 			}
-			return (newCompany.getId() == 0) ? "redirect:/company" : "redirect:/company/" + newCompany.getId();
+			return (newCompany.getId() == 0) ? "redirect:/company" : "redirect:/secure/company/" + newCompany.getId();
 		}
 		newCompany.setAddress(addressService.findOne(addressId));
 		companyService.save(newCompany);
 		attr.addFlashAttribute("alertSuccess", "Successfully saved company");
-		return (redirect != null && !"".equals(redirect)) ? "redirect:" + redirect : "redirect:/company";
+		return (redirect != null && !"".equals(redirect)) ? "redirect:" + redirect : "redirect:/secure/company";
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -67,7 +67,7 @@ public class CompanyController {
 	public String delete(@PathVariable int id, RedirectAttributes attr) {
 		companyService.delete(id);
 		attr.addFlashAttribute("alertSuccess", "Successfully deleted company");
-		return "redirect:/company";
+		return "redirect:/secure/company";
 	}
 
 	@RequestMapping(value = "/{id}/contact", method = RequestMethod.GET)

@@ -9,7 +9,7 @@ public class RootController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String root() {
-		return "redirect:/home";
+		return "redirect:/secure/home";
 	}
 
 	@RequestMapping(value = "/secure/home", method = RequestMethod.GET)

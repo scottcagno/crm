@@ -32,7 +32,7 @@ public class AddressController {
 	public String save(Address newAddress, RedirectAttributes attr, String redirect) {
 		addressService.save(newAddress);
 		attr.addFlashAttribute("alertSuccess", "Successfully saved address");
-		return (redirect != null && !"".equals(redirect)) ? "redirect:" + redirect : "redirect:/address";
+		return (redirect != null && !"".equals(redirect)) ? "redirect:" + redirect : "redirect:/secure/address";
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -48,7 +48,7 @@ public class AddressController {
 	public String delete(@PathVariable int id, RedirectAttributes attr) {
 		addressService.delete(id);
 		attr.addFlashAttribute("alertSuccess", "Successfully deleted address");
-		return "redirect:/address";
+		return "redirect:/secure/address";
 	}
 
 

@@ -11,9 +11,9 @@
 		</div>
 		<div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/company">Company</a></li>
-				<li><a href="/contact">Contact</a></li>
-				<li><a href="/task/show/cal">Calendar</a></li>
+				<li><a href="/secure/company">Company</a></li>
+				<li><a href="/secure/contact">Contact</a></li>
+				<li><a href="/secure/task/show/cal">Calendar</a></li>
 			</ul>
 		</div>
 	</div>
