@@ -22,16 +22,53 @@
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
 							Address
-							<a href="/secure/address" class="pull-right btn btn-xs btn-default">Clear</a>
+							<a href="/admin/user" class="pull-right btn btn-xs btn-default">Clear</a>
 						</div>
 						<div class="panel-body">
 							<form action="/admin/user" method="post">
 								<div class="form-group">
 									<input type="text" class="form-control" name="username" placeholder="Email" value="${(user.username)!}"/>
 								</div>
-								<div class="form-group">
-									<input type="password" class="form-control" name="password" placeholder="Password" value="${(user.password)!}"/>
-								</div>
+								<#if user??>
+									<div class="text-center">
+										<a data-toggle="collapse" data-parent="#accordion"
+										   href="#changePassword" class="text-primary">
+											Click to change password
+										</a>
+									</div>
+									<br/>
+									<div id="changePassword" class="panel-collapse collapse">
+										<!-- toggle show password input -->
+										<div class="form-group">
+											<div class="input-group">
+												<input type="password" id="toggle-pass" name="password" class="form-control"
+													   placeholder="Password" />
+												<span class="input-group-btn">
+													<button id="toggle-pass" type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right"
+															title="Click to show/hide your password">
+														<i class="fa fa-eye-slash"></i>
+													</button>
+												</span>
+											</div>
+										</div>
+										<!-- toggle show password input -->
+									</div>
+								<#else/>
+									<!-- toggle show password input -->
+									<div class="form-group">
+										<div class="input-group">
+											<input type="password" id="toggle-pass" name="password" class="form-control"
+												   placeholder="Password" />
+											<span class="input-group-btn">
+												<button id="toggle-pass" type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right"
+														title="Click to show/hide your password">
+													<i class="fa fa-eye-slash"></i>
+												</button>
+											</span>
+										</div>
+									</div>
+									<!-- toggle show password input -->
+								</#if>
 								<div class="form-group">
 									<label>Role</label>
 									<select name="role" class="form-control">
@@ -93,4 +130,5 @@
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="/static/js/main.js"></script>
 	<script src="/static/js/delete.js"></script>
+	<script src="/static/js/password.js"></script>
 </html>

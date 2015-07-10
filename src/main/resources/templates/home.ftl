@@ -14,7 +14,7 @@
 			<br/>
 			<div class="col-lg-offset-2 col-lg-8">
 				<h3>
-					<div class="col-lg-4">
+					<div class="${(admin)?string('col-lg-3', 'col-lg-4')}">
 						<div class="mute-contents">
 							<a href="/secure/company">
 								<i class="fa fa-4x fa-building-o logo-primary"></i>
@@ -23,7 +23,18 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-4">
+					<#if admin>
+						<div class="col-lg-3">
+							<div class="mute-contents">
+								<a href="/admin/user">
+									<i class="fa fa-4x fa-users logo-primary"></i>
+									<br/><br/>
+									User
+								</a>
+							</div>
+						</div>
+					</#if>
+					<div class="${(admin)?string('col-lg-3', 'col-lg-4')}">
 						<div class="mute-contents">
 							<a href="/secure/contact">
 								<i class="fa fa-4x fa-user logo-primary"></i>
@@ -32,7 +43,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-4">
+					<div class="${(admin)?string('col-lg-3', 'col-lg-4')}">
 						<div class="mute-contents">
 							<a href="/secure/task">
 								<i class="fa fa-4x fa-calendar logo-primary"></i>

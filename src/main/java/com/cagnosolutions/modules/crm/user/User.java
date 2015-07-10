@@ -14,14 +14,16 @@ public class User {
 	private String username;
 	private String password;
 	private String role = "ROLE_USER";
+	private short active = 1;
 
 	public User() {}
 
-	public User(int id, String username, String password, String role) {
+	public User(int id, String username, String password, String role, short active) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.role = role;
+		this.active = active;
 	}
 
 	public int getId() {
@@ -54,5 +56,13 @@ public class User {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public short getActive() {
+		return active;
+	}
+
+	public void setActive(short active) {
+		this.active = active;
 	}
 }

@@ -25,12 +25,12 @@ public class UserController {
 	@RequestMapping(method = RequestMethod.POST)
 	public String save(User user, RedirectAttributes attr) {
 		if (userService.canUpdate(user.getId(), user.getUsername())) {
-
-			if (user.getId() == 0 || user.getPassword()[0] != '$') {
+			if ("".equals(user.getPassword()) || user.getPassword() == null) {
+				User existingUser = userService.findOne(user.getId());
+				user.setPassword(existingUser.getPassword());
+			} else {
 				user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
-
-
-
+			}
 			userService.save(user);
 			attr.addFlashAttribute("alertSuccess", "Successfully saved user");
 			}
@@ -47,7 +47,7 @@ public class UserController {
 	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
 	public String delete(@PathVariable int id, RedirectAttributes attr) {
 		userService.delete(id);
-		attr.addAttribute("alertSuccess", "Successfully deleted user");
+		attr.addFlashAttribute("alertSuccess", "Successfully deleted user");
 		return "redirect:/admin/user";
 	}
 }
