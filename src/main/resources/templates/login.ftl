@@ -15,7 +15,6 @@
 				<br/>
 				<div class="col-lg-offset-4 col-lg-4">
 					<div class="panel panel-default">
-						<#--<div class="panel-heading">Login</div>-->
 						<div class="panel-body">
 							<form action="/login" method="post">
 								<div class="form-group">

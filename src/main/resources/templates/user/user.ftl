@@ -76,6 +76,11 @@
 										<option value="ROLE_ADMIN">Admin</option>
 									</select>
 								</div>
+								<div class="form-group">
+									<label>Active:</label>&nbsp;&nbsp;
+									&nbsp;&nbsp;<input type="radio" name="active" value="1" ${(user??)? string((user?? && user.active == 1) ? string('checked', '') , 'checked')}/> Yes
+									&nbsp;&nbsp;<input type="radio" name="active" value="0" ${(user?? && user.active == 0) ? string('checked', '')}/> No
+								</div>
 								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 								<div class="form-group">
 									<button class="btn btn-block btn-primary">Save</button>
@@ -100,6 +105,7 @@
 										<th>ID</th>
 										<th>Email</th>
 										<th>Role</th>
+										<th>Active</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -108,6 +114,7 @@
 											<td class="text-center"><a href="/admin/user/${(user.id)!}" class="btn btn-xs btn-primary">${(user.id)!}</a></td>
 											<td>${(user.username)!}</td>
 											<td>${(user.role)!}</td>
+											<td>${(user.active == 1) ? string('Yes', 'No')}</td>
 										</tr>
 									</#list>
 								</tbody>

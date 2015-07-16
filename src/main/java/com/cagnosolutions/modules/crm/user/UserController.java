@@ -33,7 +33,7 @@ public class UserController {
 			}
 			userService.save(user);
 			attr.addFlashAttribute("alertSuccess", "Successfully saved user");
-			}
+		}
 		return "redirect:/admin/user";
 	}
 
