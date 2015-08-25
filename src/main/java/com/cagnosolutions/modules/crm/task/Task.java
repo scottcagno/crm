@@ -5,11 +5,6 @@ import org.joda.time.DateTime;
 
 import javax.persistence.*;
 
-/**
- * Created by Scott Cagno.
- * Copyright Cagno Solutions. All rights reserved.
- */
-
 @Entity
 public class Task {
 
